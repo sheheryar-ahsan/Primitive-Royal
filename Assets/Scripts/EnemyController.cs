@@ -54,6 +54,12 @@ public class EnemyController : MonoBehaviour
             playerController.enemyKilled++;
             Debug.Log("Enemy Destroyed");
         }
+        else if(collision.gameObject.CompareTag("Wall"))
+        {
+            enemySpawner.enemiesSpawned--;
+            Destroy(this.gameObject);
+            Debug.Log("Enemy Destroyed");
+        }
     }
     public void GetEnemySpawner(EnemySpawner enemySpawnerObject) // Getting reference of the enemy spawner
     {
